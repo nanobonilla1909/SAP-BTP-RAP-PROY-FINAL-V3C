@@ -1,0 +1,47 @@
+managed implementation in class zbp_i_orders_9160v3 unique;
+//strict ( 2 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for Z_I_ORDERS_9160V3 alias Order
+persistent table zorders_9160V3
+lock master
+authorization master ( instance )
+etag master last_changed_at
+
+
+{
+  field ( readonly ) created_on, created_by, last_changed_by, last_changed_at;
+  field ( mandatory ) first_name, last_name, delivery_date, country;
+  field (features : instance) order_id, order_status;
+
+  create ( authorization : global );
+  update;
+  delete;
+
+  // Validations
+   // validation validateCountry on save { create; field country; }
+ //  validation validateOrderStatus on save { create; field order_status; }
+
+  // Actions
+//  action (features : instance) shipOrder result[1] $self;
+//  action (features : instance) deliverOrder result[1] $self;
+
+  association _Item { create; }
+
+  mapping for ZORDERS_9160V3 corresponding;
+}
+
+
+
+
+define behavior for Z_I_ITEMS_9160V3 alias Item
+persistent table zitems_9160v3
+lock dependent by _Order
+authorization dependent by _Order
+etag master last_changed_at
+
+{
+  update;
+  delete;
+  field ( readonly ) order_id, item_id;
+  association _Order;
+}

@@ -1,0 +1,88 @@
+@Metadata.layer: #CORE
+@Search.searchable: true
+@UI: { 
+    headerInfo: {
+    typeName: 'Item',
+    typeNamePlural: 'Items',
+    title: {
+        type: #STANDARD,
+        label: 'Item',
+        value: 'ItemId'
+    }
+} }
+
+annotate view Z_C_ITEMS_9160V3
+    with 
+{
+   
+   @UI.facet: [
+     {
+      id: 'Item',
+      purpose: #STANDARD,
+      position: 10,
+      label: 'Item',
+      type: #IDENTIFICATION_REFERENCE
+     } ]
+     
+     @Search.defaultSearchElement: true
+     OrderId;
+     
+     @UI: {
+      lineItem: [ { position: 20, importance: #MEDIUM } ],
+      identification: [ { position: 20 } ] }
+  ItemId;
+  
+   @UI: {
+      lineItem: [ { position: 30, importance: #MEDIUM } ],
+      identification: [ { position: 30 } ] }
+  Name;
+  
+   @UI: {
+      lineItem: [ { position: 40, importance: #MEDIUM } ],
+      identification: [ { position: 40 } ] }
+  Description;
+  
+  @UI: {
+      lineItem: [ { position: 50, importance: #MEDIUM } ],
+      identification: [ { position: 50 } ] }
+  ReleaseDate;
+  
+  @UI: {
+      lineItem: [ { position: 60, importance: #MEDIUM } ],
+      identification: [ { position: 60 } ] }
+  DiscontinuedDate;
+  
+  @UI: {
+      lineItem: [ { position: 70, importance: #MEDIUM } ],
+      identification: [ { position: 70 } ] }
+  Price;
+  
+  
+  @UI: {
+      lineItem: [ { position: 90, importance: #MEDIUM } ],
+      identification: [ { position: 90 } ] }
+  Height;
+  
+  @UI: {
+      lineItem: [ { position: 100, importance: #MEDIUM } ],
+      identification: [ { position: 100 } ] }
+  Width;
+  
+  @UI: {
+      lineItem: [ { position: 110, importance: #MEDIUM } ],
+      identification: [ { position: 110 } ] }
+  Depth;
+  
+  @UI: {
+      lineItem: [ { position: 120, importance: #MEDIUM } ],
+      identification: [ { position: 120 } ] }
+  Quantity;
+  
+  @UI: {
+      lineItem: [ { position: 130, importance: #MEDIUM } ],
+      identification: [ { position: 130 } ] }
+  UnitOfMeasure;
+  
+
+    
+}
