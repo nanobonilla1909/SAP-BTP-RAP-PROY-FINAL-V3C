@@ -38,7 +38,7 @@ annotate view Z_C_ORDERS_9160V3
    
    
    
-          
+//          
 //  @UI: { 
 //
 //  
@@ -85,9 +85,9 @@ annotate view Z_C_ORDERS_9160V3
       identification: [ { position: 35 } ] }
   LastName; 
     
-// @UI: {
-//      lineItem: [ { position: 40, importance: #MEDIUM } ] }
-//  FullName;
+ @UI: {
+      lineItem: [ { position: 40, importance: #MEDIUM } ] }
+  FullName;
      
  @UI: {
       lineItem: [ { position: 40, importance: #MEDIUM } ],

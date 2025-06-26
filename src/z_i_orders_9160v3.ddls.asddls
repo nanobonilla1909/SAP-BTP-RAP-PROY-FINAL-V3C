@@ -14,12 +14,12 @@ define root view Z_I_ORDERS_9160V3
       email,
       first_name,
       last_name,
-//      @UI: {
-//         lineItem: [ { position: 10, importance: #HIGH, label: 'Nombre completo' }],
-//         identification: [ { position: 10 } ]
-//            } 
-//      @EndUserText.label: 'Full Name'
-//      concat( last_name, concat( ', ', first_name ) ) as FullName,
+      @UI: {
+         lineItem: [ { position: 10, importance: #HIGH, label: 'Nombre completo' }],
+         identification: [ { position: 10 } ]
+            } 
+      @EndUserText.label: 'Full Name'
+      concat( last_name, concat( ', ', first_name ) ) as FullName,
       country,
       delivery_date,
       order_status,

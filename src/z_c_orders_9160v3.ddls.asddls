@@ -10,7 +10,7 @@ define root view entity Z_C_ORDERS_9160V3 as projection on Z_I_ORDERS_9160V3
     email as Email,
     first_name as FirstName,
     last_name as LastName,
-  // FullName as FullName,
+    FullName as FullName,
     country as Country,
     delivery_date as DeliveryDate,
     order_status as OrderStatus,

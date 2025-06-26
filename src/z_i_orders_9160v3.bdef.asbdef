@@ -18,12 +18,12 @@ etag master last_changed_at
   delete;
 
   // Validations
-   // validation validateCountry on save { create; field country; }
- //  validation validateOrderStatus on save { create; field order_status; }
+   validation validateCountry on save { create; field country; }
+   validation validateOrderStatus on save { create; field order_status; }
 
   // Actions
-//  action (features : instance) shipOrder result[1] $self;
-//  action (features : instance) deliverOrder result[1] $self;
+  action (features : instance) shipOrder result[1] $self;
+  action (features : instance) deliverOrder result[1] $self;
 
   association _Item { create; }
 
@@ -40,8 +40,20 @@ authorization dependent by _Order
 etag master last_changed_at
 
 {
+
+  field ( readonly ) order_id, last_changed_at;
+  field ( mandatory ) name, description, price, currency_code, quantity;
+  field (features : instance) item_id;
+
   update;
   delete;
-  field ( readonly ) order_id, item_id;
+
+ // Validations
+
+  validation validateDates on save { field release_date; }
+
   association _Order;
+
+  mapping for ZITEMS_9160V3 corresponding;
+
 }
